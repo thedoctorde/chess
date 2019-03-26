@@ -1,0 +1,23 @@
+image: dmitryappnext/ubuntu-d-dm-dc:latest
+
+stages:
+- build
+- review
+- delete
+
+build_job:
+  stage: review
+  script:
+  - machine=chess-frontend
+  - |
+    export GOOGLE_APPLICATION_CREDENTIALS="$CI_PROJECT_DIR/gcp.json" &&  \
+    export SHELL=/bin/bash && \
+    docker-machine create \
+    --driver google \
+    --google-machine-image https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts \
+    --google-machine-type n1-standard-1 \
+    --google-zone europe-west1-b		 \
+    --google-project chess-230609 \
+    $machine
+  - eval $(docker-machine env $machine)
+  - docker-compose -f  $CI_PROJECT_DIR/frontend/docker-compose.yml up -d

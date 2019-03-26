@@ -1,0 +1,42 @@
+.board {
+  display: grid;
+  grid-template-columns: 800px 24px;
+  grid-template-rows: 800px 24px;
+}
+
+.battlefield {
+  display: flex;
+  direction: revert;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  /*width: 800px;*/
+  /*height: 800px;*/
+}
+
+.axis {
+  display: flex;
+  justify-content: space-between;
+}
+
+.axis--columns {
+  flex-direction: row;
+}
+
+.axis--rows {
+  flex-direction: column;
+}
+
+.axis-element {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.axis-element--columns {
+  flex-direction: column;
+}
+
+.axis-element--rows {
+  flex-direction: column;
+}

@@ -1,0 +1,51 @@
+.square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 100px;
+  width: 100px;
+  height: 100px;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.black {
+  background: #B6885F;
+}
+
+.white {
+  background-color: #EFDCB1;
+}
+
+.white.selected {
+  background-color: #C3DA68;
+}
+
+.black.selected {
+  background-color: #5A723E;
+}
+
+.white.lastMove {
+  background-color: #C3DA68;
+}
+
+.black.lastMove {
+  background-color: #A1A938;
+}
+
+/*.possible:hover {*/
+  /*background-color: #000;*/
+/*}*/
+
+/*.white.possible {*/
+  /*background-color: #A7B685;*/
+/*}*/
+
+/*.black.possible {*/
+  /*background-color: #7F7B4B;*/
+/*}*/
